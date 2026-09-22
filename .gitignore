@@ -1,0 +1,21 @@
+# Track only the workspace surface; sibling product checkouts stay local.
+/*
+!/.gitignore
+!/.gitmodules
+!/README.md
+!/AGENTS.md
+!/CLAUDE.md
+!/Makefile
+!/yourown.code-workspace
+!/scripts/
+!/tests/
+!/docs/
+!/.github/
+!/.cursor/
+!/yourown-platform
+!/yourown-rag
+# Local context bindings, credentials, test fixtures and caches are never published.
+**/__pycache__/
+**/.DS_Store
+**/.env
+**/.env.*

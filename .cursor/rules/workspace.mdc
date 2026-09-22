@@ -1,0 +1,6 @@
+---
+description: Load the YourOwn workspace instructions and shared engineering rules.
+alwaysApply: true
+---
+
+Read `AGENTS.md` and `yourown-rag/rules/core.md` before work. For Terraform tasks, also read `yourown-rag/rules/terraform.md` and `yourown-rag/skills/yourown-terraform/SKILL.md`. Read the target submodule's instructions before editing it. Canonical rules live in `yourown-rag`.

@@ -1,0 +1,7 @@
+{
+  "folders": [
+    { "name": "yourown-workspace", "path": "." },
+    { "name": "yourown-platform", "path": "yourown-platform" },
+    { "name": "yourown-rag", "path": "yourown-rag" }
+  ]
+}
