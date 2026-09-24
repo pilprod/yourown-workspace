@@ -1,6 +1,6 @@
 [submodule "yourown-platform"]
 	path = yourown-platform
-	url = https://github.com/pilprod/yourown-platform.git
+	url = ../yourown-platform.git
 [submodule "yourown-rag"]
 	path = yourown-rag
-	url = https://github.com/pilprod/yourown-rag.git
+	url = ../yourown-rag.git

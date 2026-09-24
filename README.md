@@ -2,13 +2,15 @@
 
 A public development workspace for YourOwn Platform and its shared agent context. Git submodules pin the platform and context pack to independently published commits.
 
+GitLab is the canonical source for development. The [GitHub repository](https://github.com/pilprod/yourown-workspace) is a mirror. Submit changes and open merge requests on GitLab.
+
 ## Repositories
 
 | Repository | Responsibility |
 | --- | --- |
-| [yourown-workspace](https://github.com/pilprod/yourown-workspace) | Workspace setup, repository map, agent entry points and local readiness checks. |
-| [yourown-platform](https://github.com/pilprod/yourown-platform) | Reusable cloud and bare-metal infrastructure definitions and platform Helm. See its own implementation status for delivered capabilities. |
-| [yourown-rag](https://github.com/pilprod/yourown-rag) | Shared engineering rules, task skills and curated knowledge sources. |
+| [yourown-workspace](https://gitlab.com/pilprod/yourown-workspace) | Workspace setup, repository map, agent entry points and local readiness checks. |
+| [yourown-platform](https://gitlab.com/pilprod/yourown-platform) | Reusable cloud and bare-metal infrastructure definitions and platform Helm. See its own implementation status for delivered capabilities. |
+| [yourown-rag](https://gitlab.com/pilprod/yourown-rag) | Shared engineering rules, task skills and curated knowledge sources. |
 
 Agent implementations, product services, MCP servers, custom upstream forks and real environment values belong in separate repositories. Private repositories are optional local additions, not required submodules of this public workspace.
 
@@ -18,7 +20,7 @@ For a new workspace on macOS or Linux, with Git, Bash and Make installed:
 
 ```sh
 mkdir -p "$HOME/Projects"
-git clone --recurse-submodules https://github.com/pilprod/yourown-workspace.git "$HOME/Projects/yourown-workspace"
+git clone --recurse-submodules https://gitlab.com/pilprod/yourown-workspace.git "$HOME/Projects/yourown-workspace"
 cd "$HOME/Projects/yourown-workspace"
 make prepare
 make context-check
@@ -45,6 +47,8 @@ When opening a submodule alone, follow its own instructions. Do not assume every
 ## Work on a submodule
 
 New submodule checkouts normally have detached HEAD. Create or select an appropriate branch inside the child before making commits. Develop and validate there, publish that child commit, then explicitly stage its path and commit the updated gitlink in this parent repository. The gitlink records the child commit; `.gitmodules` records its URL and path.
+
+The relative sibling URLs in `.gitmodules` resolve against the workspace origin: a GitLab clone uses the GitLab submodules, and a GitHub clone uses the GitHub mirrors. Keep the same repository names and namespace on both hosts. The host does not change the immutable commit recorded by each gitlink; publish the child commit to GitLab and verify its availability in the GitHub mirror before publishing an updated workspace pin. See [Git's submodule URL rules](https://git-scm.com/docs/gitmodules).
 
 Do not use automatic `--remote` updates for preparation. Advance pins as reviewed changes. Avoid broad staging in a workspace that also contains unrelated checkouts.
 
